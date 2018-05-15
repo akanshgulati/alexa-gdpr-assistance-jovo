@@ -1,5 +1,5 @@
 {  
-    "invocation":"my test app",
+    "invocation":"gdpr-assitant",
     "intents":[  
         {  
             "name":"AMAZON.YesIntent",
