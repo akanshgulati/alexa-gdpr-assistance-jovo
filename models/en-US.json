@@ -1,0 +1,27 @@
+{  
+    "invocation":"my test app",
+    "intents":[  
+        {  
+            "name":"AMAZON.YesIntent",
+            "phrases": [
+                "yes",
+                "obviously",
+                "offcourse",
+                "is this really a question",
+                "is this a question",
+                "so lame",
+                "kids"
+            ]
+        },
+        {  
+            "name":"AMAZON.NoIntent",
+            "phrases":[  
+                "never",
+                "no",
+                "no dear",
+                "nah",
+                "not at all"
+            ]
+        }
+    ]
+}
