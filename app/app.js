@@ -48,7 +48,7 @@ const answers_descriptions = [
 app.setHandler({
   'NEW_SESSION': function() {
     let speech = 'Hi, I am GDPR Assistant, I will be asking a few questions related to data <break time="0.5s"/>' +
-        'In case a you didn\'t understood the question, say repeat' +
+        'In case you don\'t understand the question, say repeat to listen it again' +
         '<break time="0.5s"/> Are you ready?'
     let rePrompt = 'Are you ready?'
     this.setSessionAttribute('answers', []);
