@@ -78,7 +78,7 @@ app.setHandler({
       this.setSessionAttribute('answers', answers)
       // if user has no EU data
       if (answers.length === 1) {
-        this.toStatelessIntent('END', 'Excellent, you don\'t need to worry about GDPR as of now.<break time="0.5s/>"');
+        this.toStatelessIntent('END', 'Excellent, you don\'t need to worry about GDPR as of now.<break time="0.5s"/>');
       }
       let speech = answers_descriptions[answers.length - 1];
       //this.tell(speech);
