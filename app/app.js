@@ -105,15 +105,18 @@ app.setHandler({
             }
             this.followUpState('ResponseState').ask(speech, questions[count]);
         },
-        'YesIntent'() {
+        YesIntent() {
             this.toStateIntent('StartQuizState', 'QuestionsIntent');
         },
-        'NoIntent'() {
+        NoIntent() {
             this.toIntent('END', Translations.NO_MESSAGE);
         },
         RepeatIntent() {
             this.ask(`${Translations.HELP_MESSAGE}`,
                 `${Translations.HELP_REPROMPT}`);
+        },
+        HelpIntent() {
+            this.toStateIntent('HelpState', 'HelpUser', true);
         },
     },
     ResponseState: {
