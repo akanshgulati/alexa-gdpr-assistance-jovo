@@ -55,12 +55,12 @@ const Translations = {
     'ASK_MESSAGE_START': 'Would you like to start the quiz?',
     'HELP_REPROMPT': 'To give an answer to a question, respond either in yes or no for the question',
     'STOP_MESSAGE': 'Would you like to continue the quiz?',
-    'CANCEL_MESSAGE': 'Ok, let"s play again soon.',
+    'CANCEL_MESSAGE': 'Ok, I hope you come back soon to take the quiz.',
     'NO_MESSAGE': 'Ok, You can come back anytime!',
     'RESPONSE_UNHANDLED': 'Try saying either yes or no',
     'RESPONSE_NO_GDPR': 'Excellent, you don\'t need to worry about G.D.P.R. as of now.<break time="0.5s"/>',
     'HELP_UNHANDLED': 'Say yes to continue, or no to end the game.',
-    'NEW_GAME_MESSAGE': 'Hi, I\'m is G.D.P.R. Assistant.',
+    'NEW_GAME_MESSAGE': 'Hi, I\'m G.D.P.R. Assistant.',
     'WELCOME_MESSAGE': 'I will ask ten questions related to data handling. <break time="0.5s"/> Just reply either in yes or no.',
     'ANSWER_CORRECT_MESSAGE': 'correct. ',
     'ANSWER_WRONG_MESSAGE': 'wrong. ',
@@ -118,6 +118,9 @@ app.setHandler({
         HelpIntent() {
             this.toStateIntent('HelpState', 'HelpUser', true);
         },
+        CancelIntent(){
+            this.toStatelessIntent('END', Translations.CANCEL_MESSAGE)
+        }
     },
     ResponseState: {
         YesIntent() {
@@ -154,6 +157,9 @@ app.setHandler({
         StopIntent() {
             let speech = Translations.STOP_MESSAGE;
             this.followUpState('HelpState').ask(speech, speech);
+        },
+        CancelIntent(){
+            this.toStatelessIntent('END', Translations.CANCEL_MESSAGE)
         },
         Unhandled() {
             const speech = `${Translations.RESPONSE_UNHANDLED}`;
@@ -196,6 +202,9 @@ app.setHandler({
         StopIntent() {
             let speech = Translations.STOP_MESSAGE;
             this.ask(speech, speech);
+        },
+        CancelIntent(){
+            this.toStatelessIntent('END', Translations.CANCEL_MESSAGE)
         },
         END(data) {
             this.toStatelessIntent('END', data);
