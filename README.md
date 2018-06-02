@@ -1,30 +1,19 @@
-[![Jovo Framework](https://www.jovo.tech/img/github-logo.png)](https://www.jovo.tech)
+[![Jovo Framework](./assets/gdpr_assistant_logo.png)](https://www.jovo.tech)
 
-<p align="center">Sample Voice App for the <a href="https://github.com/jovotech/jovo-framework-nodejs">Jovo Framework</a> ⭐️</p>
+<p align="center">An <a href="https://www.amazon.com/dp/B07D41CX5W" title="link to skill">Alexa skill</a> to walk you through to basic 10 questions related to <a href='https://www.eugdpr.org/'>GDPR compliance</a> ⭐️</p>
 
 <p align="center">
 <a href="https://www.jovo.tech/framework/docs/"><strong>Documentation</strong></a> -
 <a href="https://github.com/jovotech/jovo-cli"><strong>CLI </strong></a> - <a href="https://github.com/jovotech/jovo-templates"><strong>Templates </strong></a> -<a href="https://github.com/jovotech/jovo-framework-nodejs/blob/master/CONTRIBUTING.md"><strong>Contributing</strong></a> - <a href="https://twitter.com/jovotech"><strong>Twitter</strong></a></p>
 <br/>
 
-# Sample Voice App for Jovo
+# Invocation
 
-```javascript
-app.setHandler({
-    'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
-    },
+```Alexa, start g.d.p.r. assistant```<br>
+`Alexa, launch g.d.p.r. assistant`<br>
+`Alexa, run g.d.p.r. assistant`<br>
 
-    'HelloWorldIntent': function() {
-        this.ask('Hello World! What is your name?', 'Please tell me your name.');
-    },
-
-    'MyNameIsIntent': function(name) {
-        this.tell('Hey ' + name + ', nice to meet you!');
-    },
-});
-```
-
+#About framework
 [Jovo](https://www.jovo.tech "Jovo's website") is a development framework for cross-platform voice apps. Use this repository as a starting point to create a voice application for Amazon Alexa and Google Assistant.
 
 > 🚀 Join our newsletter for free courses on voice app development: www.jovo.tech/newsletter 
